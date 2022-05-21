@@ -1,0 +1,245 @@
+{% extends 'placeholder/base.html' %}
+{% load static %}
+{% block content %} 
+
+
+
+<!-- Main Section -->
+  <main class="home">
+    <div class="auth">
+    <section class="hero-section text-center">
+      <div class="container container--narrow">
+
+        <div style="margin-top: 50px"> 
+            <img src="{% static 'images/hookmeup.png' %}" style="width:80%" alt="Hookmeup.">
+        </div>
+        <div class="hero-section__box">
+          <h2> <span>Join the fastest growing online adult community!!!</span></h2>
+        </div>
+
+        
+        <div class="hero-section__search">
+          <p> Read the following rules before joining </p>
+         
+            <!-- This is a button toggling the modal with the default close button -->
+        <button class="btn btn--sub btn--lg" type="button" uk-toggle="target: #modal-girls-rules">Ladies</button>
+        <button class="btn btn--sub btn--lg" type="button" uk-toggle="target: #modal-close-default">Guys</button>
+        
+
+<!-- This is the modal with the default close button -->
+        <div id="modal-girls-rules" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <h2 class="uk-modal-title">Rules for Ladies</h2>
+                
+                <ul class="uk-list uk-list-striped">
+                  <li><p>Please only message if you hookup.</p>
+                    (if you’re bothered about your face showing ,let us know we have a way around it,we got you!!)</li>
+                  <li>You would be verified via video call to avoid impersonation.</li>
+                  <li>Please be respectful and be rest assured that you would be respected.</li>
+                  <li><p>There is a fee,10% of the negotiated price.</p>
+                    (no extra cost).</li>
+                  <li><p>Your safety is priority.</p>
+                    (send a dm, you would be told the protocol to follow in order to feel safe and protected).</li>
+                 
+              </ul>
+              <div>
+                <form method="POST" >
+                  {% csrf_token %}
+                  <fieldset class="uk-fieldset">
+                      <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                          <label>
+                            <input class="uk-checkbox" type="checkbox" name="agree" required>
+                            I agree to the above rules, and wish to join your community.
+                          </label>
+                      </div>
+                      <button class="btn btn--sub btn--lg" type="submit"/> Continue </button>
+                  </fieldset>
+              </form>
+            </div>
+            </div>
+        </div>
+       
+<!-- This is the modal with the default close button -->
+<div id="modal-close-default" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+      <button class="uk-modal-close-default" type="button" uk-close></button>
+      <h2 class="uk-modal-title">Default</h2>
+        <ul class="uk-list uk-list-striped">
+          <li><p>Please only message if you’re interested</p>
+            (we weed out inactive members after a while)</li>
+          <li><p> Feel free to tell us your spec and what you are looking for</p>
+            (pictures and locations would be sent to you to pick your choice).</li>
+          <li> <p> Dm for safety measures as regards your money. </p>
+            (Be rest assured our ladies are verified individually before their pictures are either sent or posted)</li>
+          <li><p>There is a fee of ***** to connect with our girls.</p>
+            (You would be given their contacts,then you message them for hookup).</li>
+          <li><p>(Free hookup with any of our beautiful girls for every 10 paying guys you refer)</p></li>
+      </ul>
+      <div>
+        <form method="POST" >
+          {% csrf_token %}
+          <fieldset class="uk-fieldset">
+              <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                  <label>
+                    <input class="uk-checkbox" type="checkbox" name="agree" required>
+                    I agree to the above rules, and wish to join your community.
+                  </label>
+              </div>
+              <button class="btn btn--sub btn--lg" type="submit"/> Continue </button>
+          </fieldset>
+      </form>
+    </div>
+    </div>
+</div>
+
+        </div>
+        {% comment %} <button class="btn btn--sub btn--lg" type="button"/>
+        Whatsapp
+        </button> {% endcomment %}
+      </div>
+
+      
+    </section>
+
+    <section class="devlist">
+        <div class="container">
+          <div class="grid grid--three">
+            <div class="column card">
+                
+              <div class="dev">
+                <a href="/profile.html" class="card__body">
+                  <div class="dev__profile">
+                    <img class="avatar avatar--md" src="{% static 'images/icon.png' %}" alt="image" />
+                    <div class="dev__meta">
+                      <h3>Anonymous</h3>
+                      <h5>Davis23456 (male)</h5>
+                    </div>
+                  </div>
+                  <p class="dev__info">
+                    Omo your girls too sweet,👌👌
+                  </p>
+                  <div class="dev__skills">
+                    <span class="tag tag--pill tag--main">
+                      <small>whatsapp</small>
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+
+            <div class="column card">
+              <div class="dev">
+                <a href="/profile.html" class="card__body">
+                  <div class="dev__profile">
+                    <img class="avatar avatar--md" src="{% static 'images/icon.png' %}" alt="image" />
+                    <div class="dev__meta">
+                      <h3>Anonymous</h3>
+                      <h5>Joshua (male)</h5>
+                    </div>
+                  </div>
+                  <p class="dev__info">
+                    Omo this your website make sense ooo
+                  </p>
+                  <div class="dev__skills">
+                    <span class="tag tag--pill tag--main">
+                      <small>twitter</small>
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="column card">
+              <div class="dev">
+                <a href="/profile.html" class="card__body">
+                  <div class="dev__profile">
+                    <img class="avatar avatar--md" src="{% static 'images/icon.png' %}" alt="image" />
+                    <div class="dev__meta">
+                      <h3>Anonymous</h3>
+                      <h5>Jessica Ivy (female)</h5>
+                    </div>
+                  </div>
+                  <p class="dev__info">
+                    Damn!!...this rebrand is mad!!..more deals with you bro.🤝
+                  </p>
+                  <div class="dev__skills">
+                    <span class="tag tag--pill tag--main">
+                      <small>twitter</small>
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="column card">
+              <div class="dev">
+                <a href="/profile.html" class="card__body">
+                  <div class="dev__profile">
+                    <img class="avatar avatar--md" src="{% static 'images/icon.png' %}" alt="image" />
+                    <div class="dev__meta">
+                      <h3>Anonymous</h3>
+                      <h5>Shahriar P (male)</h5>
+                    </div>
+                  </div>
+                  <p class="dev__info">
+                    It's the fact you check up on us all the time😭❤you are the best
+                  </p>
+                  <div class="dev__skills">
+                    <span class="tag tag--pill tag--main">
+                      <small>whatsapp</small>
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="column card">
+              <div class="dev">
+                <a href="/profile.html" class="card__body">
+                  <div class="dev__profile">
+                    <img class="avatar avatar--md" src="{% static 'images/icon.png' %}" alt="image" />
+                    <div class="dev__meta">
+                      <h3>Anonymous</h3>
+                      <h5>Daniella (female)</h5>
+                    </div>
+                  </div>
+                  <p class="dev__info">
+                    Number 1 for hookup🙏
+                  </p>
+                  <div class="dev__skills">
+                    <span class="tag tag--pill tag--main">
+                      <small>facebook</small>
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="column card">
+              <div class="dev">
+                <a href="/profile.html" class="card__body">
+                  <div class="dev__profile">
+                    <img class="avatar avatar--md" src="{% static 'images/icon.png' %}" alt="image" />
+                    <div class="dev__meta">
+                      <h3>Anonymous</h3>
+                      <h5>Clown23 (shemale)</h5>
+                    </div>
+                  </div>
+                  <p class="dev__info">
+                   Hello, how do you work?
+                  </p>
+                  <div class="dev__skills">
+                    <span class="tag tag--pill tag--main">
+                      <small>whatsapp</small>
+                    </span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+    </div>
+  </main>
+
+{% endblock content%}
